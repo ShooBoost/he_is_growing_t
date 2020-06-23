@@ -7,12 +7,12 @@ var boyOpacity = 0;
 
 if (isMobile()) {
     body.addEventListener('touchmove',changeGirltouchPosition,false);
+    boy.addEventListener('touchmove',boytouchGrow, false);
 }else {
     body.addEventListener('mousemove',changeGirlPosition,false);
+    boy.addEventListener('mousemove',boyGrow, false);
 };
 
-
-boy.addEventListener('mousemove',boyGrow, false);
 boy.addEventListener('click',boyColorful, false);
 body.addEventListener('keydown', reSet, false);
 
@@ -34,6 +34,17 @@ function boyGrow(e){
 
     // console.log(e.target.style.filter);
 };
+
+function boytouchGrow(e){
+    // console.log(e.target.width);
+    boyWidth += 1;
+    e.target.style.width = boyWidth + 'px';
+    boyOpacity += 1;
+    e.target.style.filter = `opacity(${boyOpacity}%)`;
+
+    // console.log(e.target.style.filter);
+};
+
 var nowBgColor = '';
 function boyColorful(){
     switch (nowBgColor){
