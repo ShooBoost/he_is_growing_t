@@ -5,7 +5,7 @@ var boyOriginWidth = boy.width;
 var boyWidth = boyOriginWidth;
 var boyOpacity = 0;
 
-body.addEventListener('mousemove',changeGirlPosition,false);
+// body.addEventListener('mousemove',changeGirlPosition,false);
 body.addEventListener('touchmove',changeGirltouchPosition,false);
 boy.addEventListener('mousemove',boyGrow, false);
 boy.addEventListener('click',boyColorful, false);
