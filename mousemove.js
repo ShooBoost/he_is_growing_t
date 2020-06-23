@@ -5,8 +5,13 @@ var boyOriginWidth = boy.width;
 var boyWidth = boyOriginWidth;
 var boyOpacity = 0;
 
-// body.addEventListener('mousemove',changeGirlPosition,false);
-body.addEventListener('touchmove',changeGirltouchPosition,false);
+if (isMobile()) {
+    body.addEventListener('touchmove',changeGirltouchPosition,false);
+}else {
+    body.addEventListener('mousemove',changeGirlPosition,false);
+};
+
+
 boy.addEventListener('mousemove',boyGrow, false);
 boy.addEventListener('click',boyColorful, false);
 body.addEventListener('keydown', reSet, false);
@@ -66,3 +71,11 @@ function reSet(e){
             break
     };
 };
+
+// 偵測是否是具有觸控功能的裝置
+function isMobile() {
+    try{ document.createEvent("TouchEvent"); return true; }
+    catch(e){ return false;}
+};
+// console.log(isMobile());
+    
