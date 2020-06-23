@@ -6,6 +6,7 @@ var boyWidth = boyOriginWidth;
 var boyOpacity = 0;
 
 body.addEventListener('mousemove',changeGirlPosition,false);
+body.addEventListener('touchmove',changeGirltouchPosition,false);
 boy.addEventListener('mousemove',boyGrow, false);
 boy.addEventListener('click',boyColorful, false);
 body.addEventListener('keydown', reSet, false);
@@ -13,6 +14,10 @@ body.addEventListener('keydown', reSet, false);
 function changeGirlPosition(e){
     girl.style.left = (e.clientX + 10) + 'px';
     girl.style.top = (e.clientY + 10) + 'px';
+};
+function changeGirltouchPosition(e){
+    girl.style.left = (e.touches[0].clientX + 10) +'px';  // 第 0 根手指的 x 座標
+    girl.style.top = (e.touches[0].clientY + 10) +'px';
 };
 
 function boyGrow(e){
